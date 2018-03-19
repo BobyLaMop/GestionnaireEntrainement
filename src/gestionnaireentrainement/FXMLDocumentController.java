@@ -11,6 +11,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 
 /**
  *
@@ -18,9 +20,31 @@ import javafx.scene.control.Label;
  */
 public class FXMLDocumentController implements Initializable
 {
+    @FXML
+    private TableView<String> tableDispo;
+    
+    @FXML
+    private TableView<String> tableEntrainement;
+    
+    @FXML
+    private TableColumn<String, String> tableColNom;
+    
+    @FXML
+    private TableColumn<String, String> tableColDate;
+    
+    @FXML
+    private TableColumn<String, String> tableColNomDispo;
+    
+    @FXML
+    private TableColumn<String, String> tableColRaison;
+    
+    @FXML
+    private TableColumn<String, String> tableColDispo;
     
     @FXML
     private Label label;
+
+    
     
     @FXML
     private void handleButtonAction(ActionEvent event)

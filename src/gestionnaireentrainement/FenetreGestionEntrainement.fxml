@@ -7,14 +7,14 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestionnaireentrainement.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestionnaireentrainement.GestionnaireGestionEntrainement">
     <children>
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
       <SplitPane dividerPositions="0.5008347245409015" layoutX="74.0" layoutY="70.0" prefHeight="600.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="593.0">
                <children>
-                  <TableView fx:id="tableEntrainement" layoutX="57.0" layoutY="59.0" prefHeight="480.0" prefWidth="482.0" AnchorPane.bottomAnchor="140.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="120.0">
+                  <TableView fx:id="tableEntrainement" layoutX="57.0" layoutY="59.0" onMouseReleased="#handleSelect" prefHeight="480.0" prefWidth="482.0" AnchorPane.bottomAnchor="140.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="120.0">
                     <columns>
                       <TableColumn fx:id="tableColDate" prefWidth="300.0" text="Début - fin entraînement" />
                       <TableColumn fx:id="tableColNom" minWidth="0.0" prefWidth="300.0" text="Nom entraînement" />
@@ -30,9 +30,9 @@
                   </Label>
                   <VBox layoutX="176.0" layoutY="671.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="93.0" prefWidth="244.0" spacing="10.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="176.0" AnchorPane.rightAnchor="176.0" AnchorPane.topAnchor="671.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="244.0" text="Créer entraînement" />
-                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="244.0" text="Modifier/Supprimer entraînement" />
-                        <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="244.0" text="Quitter" />
+                        <Button fx:id="btnCreer" mnemonicParsing="false" onAction="#handleCreer" prefHeight="31.0" prefWidth="244.0" text="Créer entraînement" />
+                        <Button fx:id="btnModif" disable="true" mnemonicParsing="false" onAction="#handleModif" prefHeight="31.0" prefWidth="244.0" text="Modifier/Supprimer entraînement" />
+                        <Button fx:id="btnQuitter" mnemonicParsing="false" onAction="#handleQuitter" prefHeight="31.0" prefWidth="244.0" text="Quitter" />
                      </children>
                   </VBox>
                </children>
@@ -44,7 +44,7 @@
                         <Font name="System Bold" size="31.0" />
                      </font>
                   </Label>
-                  <Label layoutX="14.0" layoutY="72.0" prefHeight="35.0" prefWidth="563.0" text="Nom entraînement du date début à date fin">
+                  <Label fx:id="lblEntrainement" layoutX="14.0" layoutY="72.0" prefHeight="35.0" prefWidth="563.0">
                      <font>
                         <Font name="System Bold" size="24.0" />
                      </font>

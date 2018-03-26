@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestionnaireentrainement.GestionnaireAuthentification">
+   <children>
+      <TextField fx:id="txtUserName" layoutX="276.0" layoutY="135.0" prefHeight="31.0" prefWidth="250.0" />
+      <PasswordField fx:id="txtPassword" layoutX="276.0" layoutY="192.0" prefHeight="31.0" prefWidth="250.0" />
+      <Label layoutX="46.0" layoutY="133.0" text="Nom d'utilisateur">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="95.0" layoutY="190.0" text="Mot de passe">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnConnexion" layoutX="146.0" layoutY="295.0" mnemonicParsing="false" onAction="#handleConnexion" text="Connexion">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnQuitter" layoutX="372.0" layoutY="295.0" mnemonicParsing="false" onAction="#handleQuitter" prefHeight="39.0" prefWidth="109.0" text="Quitter">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Label layoutX="104.0" layoutY="37.0" text="Gestionnaire d'entraînement">
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblErreur" layoutX="109.0" layoutY="247.0" text="Mauvaise combinaison de nom d'utilisateur/mot de passe" textFill="RED" visible="false" />
+   </children>
+</AnchorPane>

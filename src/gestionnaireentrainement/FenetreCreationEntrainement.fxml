@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="783.0" prefWidth="788.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="gestionnaireentrainement.GestionnaireCreationEntrainement">
+   <children>
+      <Label layoutX="143.0" layoutY="93.0" text="Nom :">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="37.0" layoutY="144.0" text="Date de début :">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="74.0" layoutY="191.0" text="Date de fin :">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="27.0" layoutY="20.0" text="Création d'entraînement">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="72.0" layoutY="256.0" text="Description :">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="152.0" layoutY="543.0" text="Lieu :">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="587.0" text="Heure de départ :">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnCreer" layoutX="132.0" layoutY="690.0" mnemonicParsing="false" onAction="#handleCreer" text="Créer l'entraînement">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnAnnuler" layoutX="545.0" layoutY="690.0" mnemonicParsing="false" onAction="#handleAnnuler" text="Annuler">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Button>
+      <TextField fx:id="txtNom" layoutX="265.0" layoutY="99.0" prefHeight="31.0" prefWidth="218.0" />
+      <DatePicker fx:id="dateDebut" editable="false" layoutX="265.0" layoutY="150.0" onAction="#handleDateDebut" />
+      <DatePicker fx:id="dateFin" editable="false" layoutX="265.0" layoutY="197.0" onAction="#handleDateFin" />
+      <TextArea fx:id="txtDescription" layoutX="264.0" layoutY="256.0" prefHeight="247.0" prefWidth="478.0" />
+      <TextField fx:id="txtLieu" layoutX="265.0" layoutY="545.0" prefHeight="31.0" prefWidth="218.0" />
+      <ComboBox fx:id="cbHeure" layoutX="264.0" layoutY="591.0" prefHeight="31.0" prefWidth="218.0" />
+      <Label fx:id="lblVide" layoutX="282.0" layoutY="655.0" text="Un ou plusieurs champs sont vides" textFill="RED" visible="false" />
+   </children>
+</AnchorPane>

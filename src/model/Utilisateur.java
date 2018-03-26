@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controleurbd;
+package model;
 
+import controller.SimpleDataSource;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -23,14 +24,16 @@ public class Utilisateur {
     private int organisation;
     private Estival disponibilite;
     private int[][] hebdo;
+    private String role;
 
-    public Utilisateur(String matricule, String mdp, String couriel, int organisation) {
+    public Utilisateur(String matricule, String mdp, String couriel, int organisation, String role) {
         this.matricule = matricule;
         this.mdp = mdp;
         this.couriel = couriel;
         this.organisation = organisation;
         this.disponibilite = null;
         this.hebdo = null;
+        this.role = role;
     }
 
     public String getMatricule() {
@@ -81,9 +84,18 @@ public class Utilisateur {
         this.hebdo = hebdo;
     }  
 
+    public String getRole()
+    {
+        return role;
+    }
+
+    public void setRole(String role)
+    {
+        this.role = role;
+    }
     
     public void ajouterUser() throws SQLException{
-        Connection conn = applicationexamen.SimpleDataSource.getConnection();
+        Connection conn = SimpleDataSource.getConnection();
         try{            
             PreparedStatement statprep = conn.prepareStatement("INSERT INTO `utilisateur`"
                     + "(`matricule`, `mdp`, `courriel`, `id_organisation`)"
@@ -102,7 +114,7 @@ public class Utilisateur {
     }
     
     public void suprimerUser() throws SQLException{
-        Connection conn = applicationexamen.SimpleDataSource.getConnection();
+        Connection conn = SimpleDataSource.getConnection();
         try{            
             PreparedStatement statprep = conn.prepareStatement("DELETE FROM `présence` "
                     + "WHERE `matricule`= ?");
@@ -122,7 +134,7 @@ public class Utilisateur {
     }
  
     public void modUser(String nMatricule, String nMdp, String nCouriel, int nOrganisation, int nEstival) throws SQLException{
-        Connection conn = applicationexamen.SimpleDataSource.getConnection();
+        Connection conn = SimpleDataSource.getConnection();
         try{            
             PreparedStatement statprep = conn.prepareStatement("UPDATE `utilisateur` SET "
                     + "`matricule`= ?,`mdp`= ?,`courriel`= ?,`id_organisation`= ?,"
@@ -147,7 +159,7 @@ public class Utilisateur {
         Date dateDebRes;
         Date dateFinRes;
         
-        Connection conn = applicationexamen.SimpleDataSource.getConnection();
+        Connection conn = SimpleDataSource.getConnection();
         try{ 
             Statement stat = conn.createStatement();
             ResultSet result = stat.executeQuery("SELECT * FROM `dispo_estivale` ");
@@ -175,7 +187,7 @@ public class Utilisateur {
     
     public void ajouterDispoSem() throws SQLException{       
         
-        Connection conn = applicationexamen.SimpleDataSource.getConnection();
+        Connection conn = SimpleDataSource.getConnection();
         try{             
             PreparedStatement statprep = conn.prepareStatement("INSERT INTO "
                     + "`dispo_semaine`(`jour`, `plage`, `matricule_membre`) "

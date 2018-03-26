@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controleurbd;
+package model;
 
+import controller.SimpleDataSource;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -40,7 +41,7 @@ public class Estival {
     }    
     
     public void ajouterEstival(Estival date) throws SQLException{
-        Connection conn = applicationexamen.SimpleDataSource.getConnection();
+        Connection conn = SimpleDataSource.getConnection();
         try{            
             PreparedStatement statprep = conn.prepareStatement("INSERT INTO `dispo_estivale`"
                     + "(`debut`, `fin`) VALUES (?,?)");            
